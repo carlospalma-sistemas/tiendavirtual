@@ -25,15 +25,17 @@ public class Categoria {
     public Categoria() {
     }
 
-    public Categoria(String nombre, int estante) {
+    public Categoria(String nombre, int estante, boolean hab) {
         this.nombre = nombre;
         this.estante = estante;
+        this.hab = hab;
     }
 
-    public Categoria(int id, String nombre, int estante) {
+    public Categoria(int id, String nombre, int estante, boolean hab) {
         this.id = id;
         this.nombre = nombre;
         this.estante = estante;
+        this.hab = hab;
     }
 
     public int getId() {
@@ -59,5 +61,13 @@ public class Categoria {
     public void setEstante(int estante) {
         this.estante = estante;
     }
-    
+
+    public boolean isHab() {
+        return hab;
+    }
+
+    public void setHab(boolean hab) {
+        this.hab = hab;
+    }
+   
 }
