@@ -10,10 +10,11 @@ import javax.persistence.Id;
 public class Categoria {
     
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    @Column(name = "nombre", length = 45, nullable = false)
+    @Column(name = "nombre", length = 30, nullable = false, unique = true)
     private String nombre;
     
     @Column(name = "estante")
