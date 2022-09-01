@@ -3,7 +3,5 @@
 Este es una prueba de clonación. Estamos confirmando modificación.
 
 Integrantes:
-* Quelbis
-* Rafa
-* Angelo
-* Yo
+* Quité los otros integrantes
+* Contraté a Edward
