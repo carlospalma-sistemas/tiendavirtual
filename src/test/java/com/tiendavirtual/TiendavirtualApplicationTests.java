@@ -16,24 +16,22 @@ class TiendavirtualApplicationTests {
     private CategoriaServicio servicio;
     
     @Test
-    @Disabled
     void probarSiSeCreaUnaNuevaCategoria() {
         Categoria c = new Categoria("Camisas para dama", 1, true);
-        Categoria guardado = servicio.crearNuevaCategoria(c);
-        Assertions.assertTrue(guardado.getId() > 0, "ERROR, No se guardó el nuevo objeto");
+        Assertions.assertDoesNotThrow(() -> servicio.crearNuevaCategoria(c), "Error al guardar nueva categoría. ");
     }
 
     @Test
     @Disabled
     void probarSiEncuentroDamaEnCategorias() {
-        List<Categoria> listado = servicio.consultarCategorias("caballero");
-        Assertions.assertTrue(listado.size() > 0, "ERROR, No se encontró catgoría con el nombre dama");
+        List<Categoria> listado = servicio.consultarCategorias("dama");
+        Assertions.assertTrue(listado.size() > 0, "Error, no se encontró categoría con la palabra dama");
     }
     
     @Test
     @Disabled
     void probarSiEncuentroCategoriaConId1() {
         Categoria encontrado = servicio.consultarCategorias(1);
-        Assertions.assertTrue(encontrado.getId() == 1, "ERROR, no se encontró categoría con id 1");
+        Assertions.assertNotNull(encontrado, "ERROR, no se encontró categoría con id 1");
     }
 }

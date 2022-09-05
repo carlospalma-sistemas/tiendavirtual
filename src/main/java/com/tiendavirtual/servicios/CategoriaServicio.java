@@ -28,7 +28,7 @@ public class CategoriaServicio {
     }
     
     public Categoria consultarCategorias(int id) {
-        Categoria c = repo.findById(id).get();
+        Categoria c = repo.findById(id).orElse(null);
         return c;
     }
     
